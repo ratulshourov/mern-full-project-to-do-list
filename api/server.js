@@ -23,12 +23,18 @@ app.get('/todos', async (req, res) => {
 app.post('/entry', (req, res) => {
     console.log('asdsa')
     const todo = new Todo({
-        text: req.body.text
+        text: req.body.text,
+        complete:req.body.complete
     });
     todo.save();
     res.json(todo);
 })
-
+app.get('/complete/:id', async (req, res) => {
+    const todo = await Todo.findById(req.params.id);
+    // todo.complete = !todo.complete;
+    // todo.save();
+    res.json(todo);
+})
 app.put('/update-todo/:id', async (req, res) => {
     const todo = await Todo.findById(req.params.id);
     todo.complete = !todo.complete;

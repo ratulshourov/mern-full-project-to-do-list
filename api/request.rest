@@ -5,7 +5,8 @@ POST http://localhost:3001/entry
 Content-Type:application/json
 
     {
-    "text":"abc"
+    "text":"ashraf",
+    "complete":true
     }
 
 ###
@@ -16,3 +17,7 @@ PUT http://localhost:3001/update-todo/636a1c37ab7ee3a084482a69
 ###
 
 DELETE http://localhost:3001/delete-todo/636a17155e0e43595b7f9a32
+
+
+###
+GET http://localhost:3001/complete/6371bad0c68c9d404a0644fe
